@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>foldnine · hell without the devi</title>
+  <style>
+    /* reset & base */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      background-color: #0b0a0c;
+      background-image: 
+        radial-gradient(circle at 20% 30%, #1e1623 0%, #0b0a0c 80%);
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: 'Times New Roman', 'Georgia', serif;
+      padding: 1.5rem;
+      color: #d4c9d6;
+    }
+
+    .container {
+      max-width: 1100px;
+      width: 100%;
+      background: rgba(18, 15, 20, 0.65);
+      backdrop-filter: blur(3px);
+      border: 1px solid #3f2e3f;
+      box-shadow: 0 0 40px rgba(80, 40, 80, 0.3);
+      padding: 2.5rem 2rem;
+      border-radius: 4px;
+      transition: all 0.2s;
+    }
+
+    /* header / devi line */
+    .devi-line {
+      display: flex;
+      justify-content: flex-end;
+      font-size: 0.9rem;
+      letter-spacing: 2px;
+      color: #b097a8;
+      border-bottom: 1px solid #3a2a3a;
+      padding-bottom: 0.5rem;
+      margin-bottom: 2rem;
+      text-transform: uppercase;
+      font-family: 'Courier New', monospace;
+      word-spacing: 4px;
+    }
+
+    .devi-line span {
+      background: #1f1720;
+      padding: 0.2rem 0.8rem;
+      border: 1px solid #4b364b;
+      border-radius: 20px;
+      font-size: 0.75rem;
+      color: #e3d0df;
+    }
+
+    /* main title */
+    .fold-title {
+      font-size: 4.5rem;
+      font-weight: 300;
+      letter-spacing: 12px;
+      text-transform: lowercase;
+      color: #e7d7e3;
+      text-shadow: 0 0 10px #623b62, 0 0 25px #2f1a2f;
+      margin-bottom: 0.25rem;
+      line-height: 1;
+      font-family: 'Georgia', 'Times New Roman', serif;
+      border-left: 2px solid #734b73;
+      padding-left: 1.5rem;
+    }
+
+    .fold-title small {
+      font-size: 1.2rem;
+      letter-spacing: 6px;
+      display: block;
+      color: #a283a0;
+      text-shadow: none;
+      margin-top: 0.2rem;
+    }
+
+    /* navigation grid */
+    .nav-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(130px, 1fr));
+      gap: 1rem 0.5rem;
+      margin: 2.5rem 0 2rem 0;
+      padding: 1.2rem 0;
+      border-top: 1px dashed #412f41;
+      border-bottom: 1px dashed #412f41;
+    }
+
+    .nav-item {
+      font-size: 1.1rem;
+      letter-spacing: 2px;
+      text-transform: lowercase;
+      color: #c5b2c2;
+      padding: 0.4rem 0.2rem 0.4rem 0.8rem;
+      border-left: 1px solid #4f384f;
+      transition: 0.15s;
+      font-family: 'Courier New', monospace;
+      font-weight: 300;
+      background: transparent;
+      text-decoration: none;
+      display: inline-block;
+    }
+
+    .nav-item:hover {
+      color: #f2e0ef;
+      border-left-color: #b389b3;
+      background: rgba(70, 40, 70, 0.2);
+      padding-left: 1.2rem;
+      cursor: default;
+    }
+
+    .nav-item .num {
+      color: #6e4e6a;
+      margin-right: 10px;
+      font-size: 0.75rem;
+      letter-spacing: 1px;
+    }
+
+    /* quote / hell without devi */
+    .quote-block {
+      margin: 2rem 0 1.8rem 0;
+      padding: 1.2rem 1.8rem;
+      background: #141014;
+      border-left: 6px solid #5a3c5a;
+      font-style: italic;
+      font-size: 1.6rem;
+      color: #e2d0df;
+      letter-spacing: 1px;
+      line-height: 1.4;
+      font-family: 'Georgia', serif;
+      box-shadow: inset 0 0 30px #130e13;
+    }
+
+    .quote-block .devi {
+      display: block;
+      text-align: right;
+      font-size: 1rem;
+      margin-top: 0.8rem;
+      color: #9d7f9a;
+      font-style: normal;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      font-family: 'Courier New', monospace;
+    }
+
+    /* info row: foldnine + 01 home etc */
+    .info-row {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      align-items: baseline;
+      font-size: 0.85rem;
+      color: #8f7a8c;
+      border-bottom: 1px solid #332633;
+      padding-bottom: 0.5rem;
+      margin-bottom: 1.5rem;
+      font-family: 'Courier New', monospace;
+    }
+
+    .info-row .left {
+      letter-spacing: 1px;
+    }
+
+    .info-row .right {
+      letter-spacing: 2px;
+      color: #b294ae;
+    }
+
+    /* footer / elsewhere */
+    .footer-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1rem 2.5rem;
+      margin-top: 2.5rem;
+      padding-top: 1rem;
+      border-top: 1px dotted #3a2a3a;
+      font-size: 0.9rem;
+      color: #897487;
+    }
+
+    .footer-links a {
+      color: #b097b0;
+      text-decoration: none;
+      border-bottom: 1px dotted #4f384f;
+      padding-bottom: 1px;
+      transition: 0.2s;
+      font-family: 'Courier New', monospace;
+      letter-spacing: 0.5px;
+    }
+
+    .footer-links a:hover {
+      color: #e5d0e2;
+      border-bottom-color: #b389b3;
+    }
+
+    .footer-links .label {
+      color: #5e475e;
+      margin-right: 6px;
+      font-size: 0.7rem;
+      text-transform: uppercase;
+    }
+
+    /* micro details */
+    .muted {
+      color: #5f4a5a;
+      font-size: 0.75rem;
+      letter-spacing: 1px;
+    }
+
+    .small-note {
+      display: flex;
+      justify-content: flex-end;
+      margin-top: 1rem;
+      font-size: 0.7rem;
+      color: #453545;
+    }
+
+    /* responsive */
+    @media (max-width: 600px) {
+      .container { padding: 1.5rem 1rem; }
+      .fold-title { font-size: 2.8rem; letter-spacing: 6px; padding-left: 0.8rem; }
+      .nav-grid { grid-template-columns: repeat(3, 1fr); gap: 0.3rem; }
+      .nav-item { font-size: 0.9rem; padding-left: 0.3rem; }
+      .quote-block { font-size: 1.2rem; padding: 1rem; }
+      .info-row { flex-direction: column; align-items: flex-start; gap: 0.3rem; }
+    }
+
+    @media (max-width: 450px) {
+      .nav-grid { grid-template-columns: repeat(2, 1fr); }
+    }
+
+    /* mimic the "☼ foldnine" feeling */
+    .sigil {
+      font-size: 1.4rem;
+      margin-right: 6px;
+      color: #a77ca3;
+    }
+
+    .deco-dash {
+      color: #503d50;
+      margin: 0 6px;
+    }
+  </style>
+</head>
+<body>
+<div class="container">
+
+  <!-- header: WHAT IS HELL WITHOUT THE DEVI -->
+  <div class="devi-line">
+    <span>☼ what is hell without the devi</span>
+  </div>
+
+  <!-- main title: foldnine -->
+  <div class="fold-title">
+    ☼ foldnine
+    <small>· the labyrinth ·</small>
+  </div>
+
+  <!-- info row: 01 home etc (inline) -->
+  <div class="info-row">
+    <div class="left">
+      <span class="sigil">⸸</span> 01 home &nbsp;<span class="deco-dash">|</span>&nbsp; 02 contract &nbsp;<span class="deco-dash">|</span>&nbsp; 03 worldbuild
+    </div>
+    <div class="right">
+      04 the muses &nbsp; 05 threads &nbsp; 06 elsewhere
+    </div>
+  </div>
+
+  <!-- quote: HELL WITHOUT THE DEVI -->
+  <div class="quote-block">
+    “what is hell without the devi”
+    <span class="devi">— foldnine · α</span>
+  </div>
+
+  <!-- navigation grid: exactly like URL -->
+  <div class="nav-grid">
+    <span class="nav-item"><span class="num">01</span>home</span>
+    <span class="nav-item"><span class="num">02</span>contract</span>
+    <span class="nav-item"><span class="num">03</span>worldbuild</span>
+    <span class="nav-item"><span class="num">04</span>the muses</span>
+    <span class="nav-item"><span class="num">05</span>threads</span>
+    <span class="nav-item"><span class="num">06</span>elsewhere</span>
+  </div>
+
+  <!-- footer / elsewhere + extra links -->
+  <div class="footer-links">
+    <div><span class="label">✦</span> <a href="#">ninefold · archive</a></div>
+    <div><span class="label">☯</span> <a href="#">the devi's mirror</a></div>
+    <div><span class="label">⌘</span> <a href="#">contract · void</a></div>
+    <div><span class="label">⏤</span> <a href="#">threads · weft</a></div>
+  </div>
+
+  <!-- subtle micro footer -->
+  <div class="small-note">
+    <span>⏣ foldnine · hell without the devi · 2026</span>
+  </div>
+
+  <!-- hidden / decorative extra line (like the source) -->
+  <div style="margin-top: 1.2rem; border-top: 1px solid #231d23; padding-top: 0.6rem; font-size: 0.65rem; color: #3a2d3a; display: flex; justify-content: space-between; flex-wrap: wrap;">
+    <span>☼ what is hell without the devi</span>
+    <span>| 01 home · 02 contract · 03 worldbuild · 04 muses · 05 threads · 06 elsewhere |</span>
+  </div>
+
+  <!-- final exact line from the URL: "☼ foldnine 01 home 02 contract 03 worldbuild 04 the muses 05 threads 06 elsewhere" -->
+  <div style="margin-top: 1.2rem; font-family: 'Courier New', monospace; font-size: 0.7rem; color: #4b384b; letter-spacing: 1px; border-top: 1px dashed #2b1f2b; padding-top: 0.8rem; text-align: center; word-spacing: 6px;">
+    ☼ foldnine &nbsp; 01 home &nbsp; 02 contract &nbsp; 03 worldbuild &nbsp; 04 the muses &nbsp; 05 threads &nbsp; 06 elsewhere
+  </div>
+
+</div>
+<!-- end container -->
+</body>
+</html>
