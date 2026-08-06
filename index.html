@@ -116,7 +116,7 @@
       border-left-color: #b389b3;
       background: rgba(70, 40, 70, 0.2);
       padding-left: 1.2rem;
-      cursor: default;
+      cursor: pointer;
     }
 
     .nav-item .num {
@@ -126,7 +126,7 @@
       letter-spacing: 1px;
     }
 
-    /* quote / hell without devi */
+    /* quote block */
     .quote-block {
       margin: 2rem 0 1.8rem 0;
       padding: 1.2rem 1.8rem;
@@ -153,7 +153,7 @@
       font-family: 'Courier New', monospace;
     }
 
-    /* info row: foldnine + 01 home etc */
+    /* info row */
     .info-row {
       display: flex;
       flex-wrap: wrap;
@@ -176,7 +176,7 @@
       color: #b294ae;
     }
 
-    /* footer / elsewhere */
+    /* footer links */
     .footer-links {
       display: flex;
       flex-wrap: wrap;
@@ -225,6 +225,53 @@
       color: #453545;
     }
 
+    /* lore section */
+    .lore-section {
+      margin: 2rem 0 1rem 0;
+      padding: 1.2rem 1.5rem;
+      background: #100e12;
+      border: 1px solid #2f2230;
+      border-radius: 4px;
+    }
+
+    .lore-section h3 {
+      color: #cbb2c7;
+      font-family: 'Courier New', monospace;
+      font-weight: 300;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      font-size: 1rem;
+      margin-bottom: 1rem;
+      border-bottom: 1px dotted #3a2a3a;
+      padding-bottom: 0.4rem;
+    }
+
+    .lore-entry {
+      margin-bottom: 1.2rem;
+      padding-left: 0.8rem;
+      border-left: 2px solid #4f384f;
+    }
+
+    .lore-entry strong {
+      color: #d4bfd0;
+      font-weight: 400;
+      letter-spacing: 1px;
+    }
+
+    .lore-entry p {
+      color: #b09fae;
+      font-size: 0.95rem;
+      line-height: 1.5;
+      margin-top: 0.2rem;
+    }
+
+    .lore-entry .lore-meta {
+      font-size: 0.7rem;
+      color: #6a5368;
+      font-family: 'Courier New', monospace;
+      margin-top: 0.3rem;
+    }
+
     /* responsive */
     @media (max-width: 600px) {
       .container { padding: 1.5rem 1rem; }
@@ -233,13 +280,13 @@
       .nav-item { font-size: 0.9rem; padding-left: 0.3rem; }
       .quote-block { font-size: 1.2rem; padding: 1rem; }
       .info-row { flex-direction: column; align-items: flex-start; gap: 0.3rem; }
+      .lore-section { padding: 0.8rem; }
     }
 
     @media (max-width: 450px) {
       .nav-grid { grid-template-columns: repeat(2, 1fr); }
     }
 
-    /* mimic the "☼ foldnine" feeling */
     .sigil {
       font-size: 1.4rem;
       margin-right: 6px;
@@ -282,22 +329,51 @@
     <span class="devi">— foldnine · α</span>
   </div>
 
-  <!-- navigation grid: exactly like URL -->
+  <!-- navigation grid with clickable URLs -->
   <div class="nav-grid">
-    <span class="nav-item"><span class="num">01</span>home</span>
-    <span class="nav-item"><span class="num">02</span>contract</span>
-    <span class="nav-item"><span class="num">03</span>worldbuild</span>
-    <span class="nav-item"><span class="num">04</span>the muses</span>
-    <span class="nav-item"><span class="num">05</span>threads</span>
-    <span class="nav-item"><span class="num">06</span>elsewhere</span>
+    <a href="https://ninefold.neocities.org/" class="nav-item"><span class="num">01</span>home</a>
+    <a href="https://ninefold.neocities.org/Contract" class="nav-item"><span class="num">02</span>contract</a>
+    <a href="https://ninefold.neocities.org/Lore" class="nav-item"><span class="num">03</span>worldbuild</a>
+    <a href="https://ninefold.neocities.org/Muses" class="nav-item"><span class="num">04</span>the muses</a>
+    <a href="https://ninefold.neocities.org/Threads" class="nav-item"><span class="num">05</span>threads</a>
+    <a href="https://ninefold.neocities.org/" class="nav-item"><span class="num">06</span>elsewhere</a>
+  </div>
+
+  <!-- LORE SECTION (new, from /Lore) -->
+  <div class="lore-section">
+    <h3>☼ the lore · wiki</h3>
+    
+    <div class="lore-entry">
+      <strong>PROVIDENTIA DUCE</strong>
+      <p>Ninefold Industries is the last surviving piece of Lucifer’s rule on Earth. To the public, it was a media company, remembered for strange late-night television and experimental broadcasts. In reality, Ninefold is the earthly counterpart to the Netherworld, built to maintain balance between the seven sins, the seven virtues, and the nine circles. Every signal, every broadcast, every transmission served a greater purpose. Ninefold was never created to entertain. It was built to keep the barrier between worlds intact.</p>
+      <div class="lore-meta">first known broadcast, ch.09 archive</div>
+    </div>
+
+    <div class="lore-entry">
+      <strong>MIAMI</strong>
+      <p>Miami is a coastal city in southeastern Florida, United States. While most know it for its beaches, nightlife, and Art Deco architecture, others recognize it for something far stranger. Hidden beneath the city lies the strongest connection between Earth and the Netherworld. Since the late twentieth century, Miami has also served as the headquarters of Ninefold Industries, the last remnant of Lucifer’s influence on Earth.</p>
+      <div class="lore-meta">crossroads of shadows, coastal nexus</div>
+    </div>
+
+    <div class="lore-entry">
+      <strong>LATE NIGHT WITH MR. INFERNO</strong>
+      <p>One of Ninefold Industries’ most infamous projects was Inferno Studios, the company behind the mysterious television program Late Night with Mr. Inferno. The show aired sporadically around Miami during the late 1980s and early 1990s, gaining a devoted following among insomniacs, conspiracy theorists, and anyone drawn to the city’s strange reputation.</p>
+      <div class="lore-meta">inferno studios, ch.09, circa 1989</div>
+    </div>
+
+    <div class="lore-entry">
+      <strong>FALL OF MAN</strong>
+      <p>Fall of Man (Latin: Lapsus hominis) is a research committee at Miami University dedicated to investigating the city’s unexplained history and its long-standing connection to supernatural activity. Made up mostly of students, professors, and independent researchers, the group exists somewhere between legitimate academic study and urban legend.</p>
+      <div class="lore-meta">lapsus hominis, miami university committee</div>
+    </div>
   </div>
 
   <!-- footer / elsewhere + extra links -->
   <div class="footer-links">
-    <div><span class="label">✦</span> <a href="#">ninefold · archive</a></div>
-    <div><span class="label">☯</span> <a href="#">the devi's mirror</a></div>
-    <div><span class="label">⌘</span> <a href="#">contract · void</a></div>
-    <div><span class="label">⏤</span> <a href="#">threads · weft</a></div>
+    <div><span class="label">✦</span> <a href="https://ninefold.neocities.org/Contract">contract · guidelines</a></div>
+    <div><span class="label">☯</span> <a href="https://ninefold.neocities.org/Muses">the muses · council</a></div>
+    <div><span class="label">⌘</span> <a href="https://ninefold.neocities.org/Threads">threads · tracker</a></div>
+    <div><span class="label">⏤</span> <a href="https://ninefold.neocities.org/Lore">lore · wiki</a></div>
   </div>
 
   <!-- subtle micro footer -->
@@ -305,13 +381,13 @@
     <span>⏣ foldnine · hell without the devi · 2026</span>
   </div>
 
-  <!-- hidden / decorative extra line (like the source) -->
+  <!-- hidden / decorative extra line -->
   <div style="margin-top: 1.2rem; border-top: 1px solid #231d23; padding-top: 0.6rem; font-size: 0.65rem; color: #3a2d3a; display: flex; justify-content: space-between; flex-wrap: wrap;">
     <span>☼ what is hell without the devi</span>
     <span>| 01 home · 02 contract · 03 worldbuild · 04 muses · 05 threads · 06 elsewhere |</span>
   </div>
 
-  <!-- final exact line from the URL: "☼ foldnine 01 home 02 contract 03 worldbuild 04 the muses 05 threads 06 elsewhere" -->
+  <!-- final exact line from the URL -->
   <div style="margin-top: 1.2rem; font-family: 'Courier New', monospace; font-size: 0.7rem; color: #4b384b; letter-spacing: 1px; border-top: 1px dashed #2b1f2b; padding-top: 0.8rem; text-align: center; word-spacing: 6px;">
     ☼ foldnine &nbsp; 01 home &nbsp; 02 contract &nbsp; 03 worldbuild &nbsp; 04 the muses &nbsp; 05 threads &nbsp; 06 elsewhere
   </div>
